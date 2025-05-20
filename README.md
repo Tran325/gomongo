@@ -1,6 +1,14 @@
 # Overview
 
-This project implements a Stock Trading Bot, trained using Deep Reinforcement Learning, specifically Deep Q-learning. Implementation is kept simple and as close as possible to the algorithm discussed in the paper, for learning purposes.
+This AI-powered stock trading bot leverages the TimeMixer model—a hybrid LSTM-attention architecture—to forecast price movements with high accuracy. By analyzing historical OHLCV data and market trends, the bot generates low-latency trading signals for intraday or swing strategies. The TimeMixer's ability to capture long-term dependencies and key temporal patterns makes it ideal for volatile equity markets. Integrated with broker APIs, the system executes trades autonomously while managing risk through dynamic stop-loss and position sizing.
+
+## Results
+
+Trained on 2019-2021 stock data, tested on 2022 with a profit of $480.45:
+
+![Google Stock Trading episode](./extra/1.png)
+
+You can obtain similar visualizations of your model evaluations using the [notebook](./visualize.ipynb) provided.
 
 ## Introduction
 
@@ -21,13 +29,6 @@ There have been several improvements to the Q-learning algorithm over the years,
 - [ ] Prioritized Experience Replay
 - [ ] Dueling Network Architectures
 
-## Results
-
-Trained on `GOOG` 2010-17 stock data, tested on 2019 with a profit of $1141.45 (validated on 2018 with profit of $863.41):
-
-![Google Stock Trading episode](./extra/visualization.png)
-
-You can obtain similar visualizations of your model evaluations using the [notebook](./visualize.ipynb) provided.
 
 ## Some Caveats
 

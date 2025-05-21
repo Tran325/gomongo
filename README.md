@@ -12,7 +12,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
 
 ## Table of contents
   * [Models](#models)
-  * [Ranking](#ranking)
+  * [Ranking](#Ranking in 2024)
   * [Realtime Agent](realtime-agent)
   * [Data Explorations](#data-explorations)
   * [Simulations](#simulations)
@@ -53,7 +53,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
 2. TimeFM ranking 2 (open source)
 3. Chronos ranking 3 (open source)
 
-You can check the model Ranking in here[https://arxiv.org/abs/2410.16032]
+You can check the model Ranking in [here](https://arxiv.org/abs/2410.16032)
 
 ## Introduction
 

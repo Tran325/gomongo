@@ -12,7 +12,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
 
 ## Table of contents
   * [Models](#models)
-  * [Ranking](#ranking)
+  * [Ranking](#Ranking)
   * [Realtime Agent](realtime-agent)
   * [Data Explorations](#data-explorations)
   * [Simulations](#simulations)
@@ -48,9 +48,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
  17. CNN-Seq2seq
  18. Dilated-CNN-Seq2seq
 
-### ranking
-
-### Ranking in 2024
+### Ranking
 1. TimeGPT ranking 1 (paid)
 2. TimeFM ranking 2 (open source)
 3. Chronos ranking 3 (open source)

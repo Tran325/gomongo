@@ -10,6 +10,50 @@ Trained on 2019-2021 stock data, tested on 2022 with a profit of $480.45:
 
 You can obtain similar visualizations of your model evaluations using the [notebook](./visualize.ipynb) provided.
 
+## Table of contents
+  * [Models](#models)
+  * [Ranking](#ranking)
+  * [Realtime Agent](realtime-agent)
+  * [Data Explorations](#data-explorations)
+  * [Simulations](#simulations)
+  * [Tensorflow-js](#tensorflow-js)
+  * [Misc](#misc)
+  * [Results](#results)
+    * [Results Agent](#results-agent)
+    * [Results signal prediction](#results-signal-prediction)
+    * [Results analysis](#results-analysis)
+    * [Results simulation](#results-simulation)
+
+## contents
+
+### Models
+
+#### [Deep-learning models](deep-learning)
+ 1. LSTM
+ 2. LSTM Bidirectional
+ 3. LSTM 2-Path
+ 4. GRU
+ 5. GRU Bidirectional
+ 6. GRU 2-Path
+ 7. Vanilla
+ 8. Vanilla Bidirectional
+ 9. Vanilla 2-Path
+ 10. LSTM Seq2seq
+ 11. LSTM Bidirectional Seq2seq
+ 12. LSTM Seq2seq VAE
+ 13. GRU Seq2seq
+ 14. GRU Bidirectional Seq2seq
+ 15. GRU Seq2seq VAE
+ 16. Attention-is-all-you-Need
+ 17. CNN-Seq2seq
+ 18. Dilated-CNN-Seq2seq
+
+### Ranking in 2024
+
+    ▸ TimeGPT ranking 1 (paid)
+    ▸ TimeFM ranking 2 (open source)
+    ▸ Chronos ranking 3 (open source)
+
 ## Introduction
 
 Generally, Reinforcement Learning is a family of machine learning techniques that allow us to create intelligent agents that learn from the environment by interacting with it, as they learn an optimal policy by trial and error. This is especially useful in many real world tasks where supervised learning might not be the best approach due to various reasons like nature of task itself, lack of appropriate labelled data, etc.

@@ -49,10 +49,11 @@ You can obtain similar visualizations of your model evaluations using the [noteb
  18. Dilated-CNN-Seq2seq
 
 ### Ranking in 2024
+1. TimeGPT ranking 1 (paid)
+2. TimeFM ranking 2 (open source)
+3. Chronos ranking 3 (open source)
 
-    ▸ TimeGPT ranking 1 (paid)
-    ▸ TimeFM ranking 2 (open source)
-    ▸ Chronos ranking 3 (open source)
+You can check the model Ranking in here[https://arxiv.org/abs/2410.16032]
 
 ## Introduction
 

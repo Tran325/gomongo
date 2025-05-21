@@ -28,7 +28,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
 
 ### Models
 
-#### [Deep-learning models](deep-learning)
+##### [Deep-learning models](deep-learning)
  1. LSTM
  2. LSTM Bidirectional
  3. LSTM 2-Path

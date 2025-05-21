@@ -1,4 +1,6 @@
-# Overview
+# Stock Trading bot using AI LLM Forecasting Model
+
+## Overview
 
 This AI-powered stock trading bot leverages the TimeMixer model—a hybrid LSTM-attention architecture—to forecast price movements with high accuracy. By analyzing historical OHLCV data and market trends, the bot generates low-latency trading signals for intraday or swing strategies. The TimeMixer's ability to capture long-term dependencies and key temporal patterns makes it ideal for volatile equity markets. Integrated with broker APIs, the system executes trades autonomously while managing risk through dynamic stop-loss and position sizing.
 
@@ -44,7 +46,7 @@ You can check the **Deep-learning models** [here](deep-learning)
 
 ### Dataset
 
-You can download Historical Financial data from [Yahoo! Finance](https://ca.finance.yahoo.com/) for training, or even use some sample datasets already present under `data/`.
+You can download Historical Financial data from [here](https://ca.finance.yahoo.com/) for training, or even use some sample datasets already present under `data/`.
 
 ### Ranking in 2024
 1. TimeGPT ranking 1 (paid)

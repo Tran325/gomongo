@@ -47,14 +47,14 @@ You can obtain similar visualizations of your model evaluations using the [noteb
  17. CNN-Seq2seq
  18. Dilated-CNN-Seq2seq
 
-    You can check the **Deep-learning models** [here](deep-learning)
+You can check the **Deep-learning models** [here](deep-learning)
 
 ### Ranking in 2024
 1. TimeGPT ranking 1 (paid)
 2. TimeFM ranking 2 (open source)
 3. Chronos ranking 3 (open source)
 
-    You can check the model Ranking in [here](https://arxiv.org/abs/2410.16032)
+You can check the model Ranking in [here](https://arxiv.org/abs/2410.16032)
 
 ## Introduction
 

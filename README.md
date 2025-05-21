@@ -2,7 +2,7 @@
 
 This AI-powered stock trading bot leverages the TimeMixer model—a hybrid LSTM-attention architecture—to forecast price movements with high accuracy. By analyzing historical OHLCV data and market trends, the bot generates low-latency trading signals for intraday or swing strategies. The TimeMixer's ability to capture long-term dependencies and key temporal patterns makes it ideal for volatile equity markets. Integrated with broker APIs, the system executes trades autonomously while managing risk through dynamic stop-loss and position sizing.
 
-## Results
+## Model Output
 
 Trained on 2019-2021 stock data, tested on 2022 with a profit of $480.45:
 
@@ -12,7 +12,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
 
 ## Table of contents
   * [Models](#models)
-  * [Ranking](#Ranking)
+  * [Ranking](#Ranking-in-2024)
   * [Realtime Agent](realtime-agent)
   * [Data Explorations](#data-explorations)
   * [Simulations](#simulations)
@@ -48,7 +48,7 @@ You can obtain similar visualizations of your model evaluations using the [noteb
  17. CNN-Seq2seq
  18. Dilated-CNN-Seq2seq
 
-### Ranking
+### Ranking in 2024
 1. TimeGPT ranking 1 (paid)
 2. TimeFM ranking 2 (open source)
 3. Chronos ranking 3 (open source)

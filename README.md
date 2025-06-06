@@ -1,10 +1,8 @@
-# Stock Trading bot using AI LLM Forecasting Model
+# Solana Sandwich Bot
 
 ## Overview
 
-**AI-powered** **stock** **trading bot** leverages the **TimeMixer model**—a hybrid **LSTM**-attention architecture—to **forecast** price movements with high accuracy. By analyzing historical OHLCV data and market trends, the bot generates low-latency trading signals for intraday or swing strategies. The TimeMixer's ability to capture long-term dependencies and key temporal patterns makes it ideal for volatile equity markets. Integrated with broker APIs, the system executes trades autonomously while managing risk through dynamic stop-loss and position sizing.
-
-[Medium](https://medium.com/@fenrow325/stock-trading-forecasting-model-3819e1b792c9)
+A **Solana Sandwich Bot** is a type of **MEV (Maximal Extractable Value)** bot designed to exploit price discrepancies in Solana's decentralized exchange (**DEX**) transactions by inserting ("sandwiching") its own trades around a victim's transaction.
 
 ## Let's Connect!,
 
@@ -18,86 +16,92 @@
   <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
 </a>
 
-## Model Output
+### Global Metrics
+|Metric|Value|
+|---|---|
+|Proportion of sandwich-inclusive block|2.858%|
+|Average sandwiches per block|0.04020|
+|Standard Deviation of sandwiches per block|0.31385|
 
-Trained on 2019-2021 stock data, tested on 2022 with a profit of $480.45:
 
-![Google Stock Trading episode](./extra/1.png)
+### Stake pool dsitribution (Epoch 777):
+|Pool|Stake (SOL)|Pool Share|
+|---|---|---|
+|Marinade (overall)|4,769,581|53.10%|
+| - Marinade Liquid|2,394,101|49.62%|
+| - Marinade Native|2,375,480|57.14%|
+|Jito|4,802,602|27.59%|
+|xSHIN|271,700|27.22%|
+|SFDP|4,931,260|12.70%|
+|JPool|83,242|7.71%|
+|BlazeStake|50,520|4.59%|
+|The Vault|17,952|1.14%|
+|Aero|1,831|0.36%|
 
-You can obtain similar visualizations of your model evaluations using the [notebook](./visualize.ipynb) provided.
+### Honourable Mention
+These are hand-picked, visible to the naked eye colluders. If you're staking to them, you should unstake because you placed your trust on validators actively breaking trust.
 
-## Table of contents
-  * [Models](#models)
-  * [Dataset](#dataset)
-  * [Ranking](#Ranking-in-2024)
-  * [Getting Started](#Getting-Started)
-  * [Results](#results)
+If your validator is on this list, check the docs of your favourite Solana validator flavour, compile the binaries yourself and make sure to apply any command line arguments as indicated.
 
-## contents
+|Validator|Stake|Observed Leader Blocks|Weighted Sandwich-inclusive blocks|Weighted Sandwiches|
+|---|---|---|---|---|
+|Haus – Guaranteed Best APY & No Fees|2,005,970|31,492|1,528.50|1,907.67|
+|AG 0% fee + ALL MEV profit share|1,463,103|23,640|2,043.83|2,461.58|
+|HM5H...dMRA|1,037,426|14,852|1,128.42|1,635.42|
+|BT8L...gziD|807,033|12,284|4,916.08|11,013.92|
+|[Marinade Customer] 9fgw...zsXs|362,150|2,704|1,251.92|3,258.25|
+|[Marinade/Jito Customer] AltaBlock|276,158|1,932|725.00|1,373.83|
+|Blocksmith 🗝️|265,604|5,276|437.50|533.42|
 
-### Models
+## Preface
+Sandwiching refers to the action of forcing the earlier inclusion of a transaction (frontrun) before a transaction published earlier (victim), with another transaction after the victim transaction to realise a profit (backrun), while abusing the victim's slippage settings. We define a sandwich as "a set of transactions that include exactly one frontrun and exactly one backrun transaction, as well as at least one victim transaction", a sandwicher as "a party that sandwiches", and a colluder as "a validator that forwards transactions they receive to a sandwicher".
 
- 1. LSTM
- 2. LSTM Bidirectional
- 3. LSTM 2-Path
- 4. GRU
- 5. GRU Bidirectional
- 6. GRU 2-Path
- 7. Vanilla
- 8. Vanilla Bidirectional
- 9. Vanilla 2-Path
- 10. LSTM Seq2seq
- 11. LSTM Bidirectional Seq2seq
- 12. LSTM Seq2seq VAE
- 13. GRU Seq2seq
- 14. GRU Bidirectional Seq2seq
- 15. GRU Seq2seq VAE
- 16. Attention-is-all-you-Need
- 17. CNN-Seq2seq
- 18. Dilated-CNN-Seq2seq
+Some have mentioned that users should issue transactions with lower slippage instead but it's not entirely possible when trading token pairs with extremely high volatility. Being forced to issue transactions with low slippage may lead to higher transaction failure rates and missed opportunities, which is also suboptimal.
 
-You can check the **Deep-learning models** [here](deep-learning)
+The reasons why sandwiching is harmful to the ecosystem had been detailed by [another researcher](https://github.com/a-guard/malicious-validators/blob/main/README.md#why-are-sandwich-attacks-harmful) and shall not be repeated in detail here, but it mainly boils down to breaking trust, transparency and fairness.
 
-### Dataset
+We believe that colluder identification should be a continuous effort since [generating new keys](https://docs.anza.xyz/cli/wallets/file-system) to run a new validator is essentially free, and with a certain stake pool willing to sell stake to any validator regardless of operating history, one-off removals will prove ineffective. This repository aims to serve as a tool to continuously identify sandwiches and colluders such that relevant parties can remove stake from sandwichers as soon as possible.
 
-You can download Historical Financial data from [here](https://ca.finance.yahoo.com/) for training, or even use some sample datasets already present under `data/`.
+## Key Components
 
-### Ranking in 2024
-1. TimeGPT ranking 1 (paid)
-2. TimeFM ranking 2 (open source)
-3. Chronos ranking 3 (open source)
+### MEV (Maximal Extractable Value)
 
-You can check the model Ranking [here](https://arxiv.org/abs/2410.16032)
+- The profit extracted by reordering, inserting, or censoring transactions in a block.
+- On Solana, MEV strategies include frontrunning, backrunning, and sandwich attacks.
 
-## Getting Started
+### Sandwich Attack Mechanics
 
-In order to use this project, you'll need to install the required python packages:
+- Frontrun: The bot places a buy order before the victim’s large buy (increasing price).
+- Victim’s Transaction: The victim executes their trade at a worse price due to the bot’s initial trade.
+- Backrun: The bot sells the asset immediately after, profiting from the inflated price.
 
-```bash
-pip3 install -r requirements.txt
-```
+### Solana-Specific Challenges
 
-Now you can open up a terminal and start training the agent:
+- High Throughput: Solana’s fast block times (~400ms) require low-latency bots.
+- Transaction Parallelization: Solana processes transactions in parallel, making MEV extraction different from Ethereum.
+- Priority Fees: Bots must set higher fees to ensure their transactions are prioritized.
 
-```bash
-python3 train.py data/GOOG.csv data/GOOG_2018.csv --strategy t-dqn
-```
+### Required Tech Stack
 
-Once you're done training, run the evaluation script and let the agent make trading decisions:
+- RPC Nodes (QuickNode, Helius, private nodes): For low-latency transaction data.
+- Jito Labs (Jito-Solana client): Optimized for MEV with features like bundled transactions.
+- Sealevel Runtime: Understanding Solana’s parallel execution model for efficient MEV.
+- Web3.js / @solana/web3.js: For interacting with the Solana blockchain.
+- Arbitrage Detection Algorithms: Identifying profitable sandwich opportunities.
 
-```bash
-python3 eval.py data/GOOG_2019.csv --model-name model_GOOG_50 --debug
-```
-
-Now you are all set up!
-
-## Results
-
-![Results](./extra/2.png)
-
-![Results](./extra/3.png)
-
-![Results](./extra/4.png)
+## Report Interpretation
+The reports consist of 14 columns and their meanings are as follows:
+|Column(s)|Meaning|
+|---|---|
+|leader/vote|The validator's identity and vote account pubkeys|
+|name|The validator's name according to onchain data|
+|Sc|"Score", normalised weighted number of sandwiches|
+|Sc_p|"Presence score", normalised number of blocks with sandwiches, which roughly means proportion of sandwich inclusive blocks|
+|R-Sc/R-Sc_p|Unnormalised Sc and Sc_p|
+|slots|Number of leader slots observed for the validator|
+|Sc_p_{lb\|ub}|Bounds of the confidence interval of the validator's true proportion of sandwich inclusive blocks. Flagged if the lower bound is above the cluster mean|
+|Sc_{lb\|ub}|Bounds of the confidence interval of which the validator is considered to have an "average" number of sandwiches per block. Flagged if Sc_p is above the upper bound|
+{Sc_p\|Sc}_flag|True if the validator is being flagged due to the respective metric, false otherwise|
 
 ---
 

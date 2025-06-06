@@ -4,6 +4,20 @@
 
 **AI-powered** **stock** **trading bot** leverages the **TimeMixer model**—a hybrid **LSTM**-attention architecture—to **forecast** price movements with high accuracy. By analyzing historical OHLCV data and market trends, the bot generates low-latency trading signals for intraday or swing strategies. The TimeMixer's ability to capture long-term dependencies and key temporal patterns makes it ideal for volatile equity markets. Integrated with broker APIs, the system executes trades autonomously while managing risk through dynamic stop-loss and position sizing.
 
+[Medium](https://medium.com/@fenrow325/stock-trading-forecasting-model-3819e1b792c9)
+
+## Let's Connect!,
+
+<a href="mailto:fenrow325@gmail.com" target="_blank">
+  <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail">
+</a>
+<a href="https://t.me/fenrow" target="_blank">
+  <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="Telegram">
+</a>
+<a href="https://discord.com/users/fenrow_325" target="_blank">
+  <img src="https://img.shields.io/badge/Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white" alt="Discord">
+</a>
+
 ## Model Output
 
 Trained on 2019-2021 stock data, tested on 2022 with a profit of $480.45:
@@ -84,3 +98,18 @@ Now you are all set up!
 ![Results](./extra/3.png)
 
 ![Results](./extra/4.png)
+
+---
+
+## 📞 Contact Information
+For questions, feedback, or collaboration opportunities, feel free to reach out:
+
+<div align="left">
+
+📧 **Email**: [fenrow325@gmail.com](mailto:fenrow325@gmail.com)  
+📱 **Telegram**: [@fenroW](https://t.me/fenrow)  
+🎮 **Discord**: [@fenroW](https://discord.com/users/fenrow_325)  
+
+</div>
+
+---

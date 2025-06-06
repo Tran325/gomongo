@@ -1,0 +1,20 @@
+[package]
+name = "sandwich-finder"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.8.1", features = ["ws"] }
+clap = "4.5.27"
+dashmap = "6.1.0"
+dotenv = "0.15.0"
+futures = "0.3.31"
+mysql = "26.0.0"
+reqwest = { version = "0.12.12", features = ["json"] }
+serde = "1.0.217"
+serde_json = "1.0.137"
+solana-rpc-client = "2.1.9"
+solana-sdk = "2.1.9"
+tokio = "1.43.0"
+yellowstone-grpc-client = { path = "./yellowstone-grpc/yellowstone-grpc-client" }
+yellowstone-grpc-proto = { path = "./yellowstone-grpc/yellowstone-grpc-proto" }

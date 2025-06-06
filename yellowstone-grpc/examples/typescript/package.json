@@ -1,0 +1,22 @@
+{
+  "name": "yellowstone-grpc-client-example-ts",
+  "version": "1.0.0",
+  "license": "Apache-2.0",
+  "author": "Triton One",
+  "main": "dist/client.js",
+  "description": "Yellowstone gRPC Geyser TypeScript example",
+  "homepage": "https://triton.one",
+  "dependencies": {
+    "yargs": "^17.6.2",
+    "@triton-one/yellowstone-grpc": "file:../../yellowstone-grpc-client-nodejs"
+  },
+  "scripts": {
+    "build": "tsc -p .",
+    "fmt": "prettier -w .",
+    "start": "npm run build && node dist/client.js"
+  },
+  "devDependencies": {
+    "prettier": "^2.8.3",
+    "typescript": "^4.9.5"
+  }
+}

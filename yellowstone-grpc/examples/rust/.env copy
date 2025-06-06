@@ -1,0 +1,34 @@
+# Required configuration
+ENDPOINT=https://api.example.com
+ACTION=HealthCheck
+
+# Optional configuration
+X_TOKEN=your_token_here
+COMMITMENT=Processed  # Processed, Confirmed, or Finalized
+
+# Action-specific configuration
+# For Ping action
+PING_COUNT=0
+
+# For IsBlockhashValid action
+BLOCKHASH=your_blockhash_here
+
+# For Subscribe action (set to true to enable)
+SUBSCRIBE_ACCOUNTS=false
+SUBSCRIBE_SLOTS=false
+SUBSCRIBE_TRANSACTIONS=false
+SUBSCRIBE_TRANSACTIONS_STATUS=false
+SUBSCRIBE_ENTRY=false
+SUBSCRIBE_BLOCKS=false
+SUBSCRIBE_BLOCKS_META=false
+
+# More specific filters for Subscribe action
+# Account filters
+ACCOUNTS_ACCOUNT=pubkey1,pubkey2
+ACCOUNTS_OWNER=owner1,owner2
+ACCOUNTS_MEMCMP=offset1,data1
+ACCOUNTS_DATASIZE=1234
+ACCOUNTS_TOKEN_ACCOUNT_STATE=false
+ACCOUNTS_DATA_SLICE=offset1,size1
+
+# Additional configuration options...

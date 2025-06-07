@@ -6,11 +6,7 @@ A **Solana Sandwich Bot** is a type of **MEV (Maximal Extractable Value)** bot d
 
 ## Sample result
 
-```mermaid
-
 ![Result](./extra/1.png)
-
-```
 
 ## Let's Connect!,
 

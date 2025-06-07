@@ -8,7 +8,7 @@ A **Solana Sandwich Bot** is a type of **MEV (Maximal Extractable Value)** bot d
 
 ![Result](./extra/1.png)
 
-You can check <a href="https://solscan.io/block/341339669" target="_blank">here</a>.
+You can check <a href="https://solscan.io/block/341339669" target="_blank">this link</a>.
 
 ## Let's Connect!,
 
